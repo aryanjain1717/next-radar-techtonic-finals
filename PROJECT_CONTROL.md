@@ -316,6 +316,47 @@ Expected additive tests:
 No BRS formula, matching, embedding, threshold, actionability,
 clustering, evidence or RadarContext redesign is permitted.
 
+### ISSUE-001F — C4A Source Integrity Failure
+
+STATUS: OPEN
+SEVERITY: HIGH
+
+The first final governed-feature proposal was NOT approved for insertion into
+data/brand_memory.json.
+
+Feature/dimension boundaries were largely compliant, but source integrity failed.
+
+Confirmed defects:
+
+1. source_url values were emitted as Markdown links rather than raw URL strings.
+
+2. Multiple proposed source URLs were invalid / 404, including references used for:
+   - SRC-DOVE-IN-003
+   - SRC-DOVE-IN-004
+   - SRC-DOVE-IN-005
+   - SRC-DOVE-IN-006
+   - SRC-DOVE-IN-007 / annual-report references
+
+3. The proposal claimed "Zero URLs are invented", which was not supported by live
+   verification.
+
+4. SRC-DOVE-IN-005 was incorrectly redirected from the approved FY2024-25 Personal
+   Care source to a nonexistent FY2023-24 Beauty & Wellbeing URL.
+
+5. SRC-DOVE-IN-006 should use verified official HUL Integrated Report / R&D evidence
+   rather than the nonexistent press-release URL.
+
+6. Expected coverage was omitted from the final report.
+   If the approved 8 dimensions remain supported:
+   supported weight = 75 / 100
+   unresolved weight = 25 / 100.
+
+No governed features have been inserted into production data.
+
+NEXT ACTION:
+Freeze verified raw official HUL URLs and regenerate the exact governed feature
+array without altering feature/dimension boundaries.
+
 ### CHECKPOINT C3 — Governed Brand Memory Loader Implementation
 
 STATUS: PASS
