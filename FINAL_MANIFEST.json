@@ -1,0 +1,208 @@
+{
+  "project": "NEXT Radar \u2014 Google AI Studio Final",
+  "final_choice": "A_FAIL_CLOSED_PRIORITISATION",
+  "generated_at_utc": "2026-08-28T07:29:15.382910+00:00",
+  "validation": {
+    "python_reference_tests": {
+      "passed": 172,
+      "total": 172
+    },
+    "node_tests": {
+      "passed": 14,
+      "total": 14
+    },
+    "node_syntax_check": "PASS",
+    "jsx_parse": "PASS",
+    "client_secret_scan": "PASS",
+    "external_social_web_collection_scan": "PASS",
+    "npm_install_and_vite_build": "NOT_RUN_OFFLINE_ENVIRONMENT",
+    "live_gemini_call": "NOT_RUN_NO_LIVE_RUNTIME"
+  },
+  "files": [
+    {
+      "path": ".env.example",
+      "sha256": "72729d2d8cd6c8e99e3a610a0cc8a17f4037132243163fe99fc17fca057f20ca",
+      "bytes": 664
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "a8668915da3eea06643d04f6599e2a52c437a22c9bcc1456a5c6debca6cd43fb",
+      "bytes": 48
+    },
+    {
+      "path": "AI_STUDIO_MASTER_PROMPT.md",
+      "sha256": "ba4b92e61b9b40e4c5103e02e925dab41db6d6c5c7165dd33998ebdd74587794",
+      "bytes": 2028
+    },
+    {
+      "path": "ARCHITECTURE_AND_COHERENCY.md",
+      "sha256": "bb4f145326947d48da84958b2e91aed57ee35fcefec76ee92cb8bba3ba032aa6",
+      "bytes": 7967
+    },
+    {
+      "path": "FINAL_VALIDATION_REPORT.md",
+      "sha256": "357694f51cc1029fd0b71ff630a730cf16dbe677adb65ab6fbb2cd873c01a54c",
+      "bytes": 7603
+    },
+    {
+      "path": "GOOGLE_AI_STUDIO_HANDOFF.md",
+      "sha256": "e91f2a9ef323cd64661f2c1e39d0f028b3b853ab3ae790af2cfd9be81d1504da",
+      "bytes": 3915
+    },
+    {
+      "path": "README.md",
+      "sha256": "4b289f505addcf38a3d5a63b3d89bb9bf11f8ca3d4823bf0adefb2236f6df1d3",
+      "bytes": 3270
+    },
+    {
+      "path": "client/index.html",
+      "sha256": "6a95d30dc2f6fe8b3fe251a1cbdbd3c7e6893e990a711626fdc1785bfc4c1488",
+      "bytes": 266
+    },
+    {
+      "path": "client/src/App.jsx",
+      "sha256": "8a76988afd37d509b160a8df5658a924f8aa431173c2a76283ee452b2a3c6404",
+      "bytes": 14669
+    },
+    {
+      "path": "client/src/main.jsx",
+      "sha256": "e5b4b32830d9a0645e1d5c28aad4eaa7fcafb3dcb34c58c276c039a70c356da5",
+      "bytes": 223
+    },
+    {
+      "path": "client/src/styles.css",
+      "sha256": "645d27a75ed93b3ff2afac9946c8e2b4329a6e28ea396e1e20fdcea3e19c4db2",
+      "bytes": 8370
+    },
+    {
+      "path": "data/brand_memory.json",
+      "sha256": "50f411c5db5523ac83324be4d5e2e2b42406994dca000a8ceef709396f651f01",
+      "bytes": 1091
+    },
+    {
+      "path": "demo/README.md",
+      "sha256": "0f187373d7ecacbdcdb7046d92f9016f34b87b7c1ba3a1612d8ae53656cc2aac",
+      "bytes": 655
+    },
+    {
+      "path": "demo/priority_snapshot_template.json",
+      "sha256": "1c19f91a1b2bd713706bfae492cd09c5d67e15519b823df8ea463f7abc08c8bb",
+      "bytes": 379
+    },
+    {
+      "path": "demo/sample_dove_vendor.csv",
+      "sha256": "691b963bc661b48e0bdae8713a05ea2b190d278f8f5e7cc1e4b59b4c20727284",
+      "bytes": 874
+    },
+    {
+      "path": "package.json",
+      "sha256": "038733e927cf58b1bd5160a6043d09434342ba68734914f55ba08bddc9a81f3d",
+      "bytes": 620
+    },
+    {
+      "path": "scripts/check.mjs",
+      "sha256": "48f67df0a572e5aa51015bfac8baad32928bf4fbcbde280dacc07499832f2938",
+      "bytes": 1126
+    },
+    {
+      "path": "server/ask-radar.mjs",
+      "sha256": "a904b50b02d9c26153f90f6c49af65ecf80c37c818e6478845f6ed1af58247e7",
+      "bytes": 14267
+    },
+    {
+      "path": "server/domain/clustering.mjs",
+      "sha256": "f7a7f9236779c7f24255ee80e86e9f76789487911342966ecf6884449e06d658",
+      "bytes": 7711
+    },
+    {
+      "path": "server/domain/constants.mjs",
+      "sha256": "796331603f612a7f4aa8c2cdb204f9bd9b932d1734327c926d70dc6317223461",
+      "bytes": 4424
+    },
+    {
+      "path": "server/domain/context.mjs",
+      "sha256": "8e207297111449e8c71a6a11d96d2f118868ed627dcc355845a8b19a728d91fb",
+      "bytes": 4376
+    },
+    {
+      "path": "server/domain/dedup.mjs",
+      "sha256": "54d9557db4149d49f5db6c0d350907529164cf33a6bd509855e728cc83408e04",
+      "bytes": 5708
+    },
+    {
+      "path": "server/domain/dove-core.mjs",
+      "sha256": "393e4a5902f4afa57019b25cd6032f9fe197991dc518bfc8c4c10c1450e23c5b",
+      "bytes": 6649
+    },
+    {
+      "path": "server/domain/evidence.mjs",
+      "sha256": "6bea89c9821e352ce1c8c824dc337afa9b21c54df4d88b21b43e5de515e24ae6",
+      "bytes": 8132
+    },
+    {
+      "path": "server/domain/hierarchy.mjs",
+      "sha256": "ee4f3200a962e572c2f3c3e1b534239907463412515eb52d6c7a97a0f8346781",
+      "bytes": 6850
+    },
+    {
+      "path": "server/domain/ingestion.mjs",
+      "sha256": "b5be223298ffbc06de1291857d42488407ed0cc5f7b923347837b3542b61fbe2",
+      "bytes": 9192
+    },
+    {
+      "path": "server/domain/overview.mjs",
+      "sha256": "7d4fe089e551d299fa63d15dca3025facbfc7c5a2d5737110fd18a5d1ce42121",
+      "bytes": 5420
+    },
+    {
+      "path": "server/domain/retrieval.mjs",
+      "sha256": "fa46ce190d6ec2e99ba7309f22e81f095032d4f83e334542660d5dc9010bbac2",
+      "bytes": 3098
+    },
+    {
+      "path": "server/domain/trend-analysis.mjs",
+      "sha256": "41f1216e5c415705b29e5cfb381eb915224982e7d0249d60408b2b41ed04e277",
+      "bytes": 12851
+    },
+    {
+      "path": "server/domain/utils.mjs",
+      "sha256": "f2d38327be33695c78406e9997e1bbfe77ad6d999b518ed34aa776288986542f",
+      "bytes": 2990
+    },
+    {
+      "path": "server/gemini.mjs",
+      "sha256": "696c604e2fef0b55c82ce292f8db24ee01c3a53971cb3aa81fc6501560295054",
+      "bytes": 10148
+    },
+    {
+      "path": "server/index.mjs",
+      "sha256": "4d94b3212f5a703e1f3c04944513cd64104fbbb93c311daf7dc87497d2946da2",
+      "bytes": 4331
+    },
+    {
+      "path": "server/pipeline.mjs",
+      "sha256": "f00f2187ee165a7da3dcad9a346a74f8ffbdb34592b3a54d1c6dd615e5167cab",
+      "bytes": 3933
+    },
+    {
+      "path": "tests/contracts.test.mjs",
+      "sha256": "032077fab3eb7b8920e01aca95eb0c0c1cbc3c1696fb671ef875bcc083ddf00c",
+      "bytes": 4334
+    },
+    {
+      "path": "tests/full-system.test.mjs",
+      "sha256": "df2f1b69f988c92422bb8f1dc4a3f9ce1717392fa8159d711f753dd9e5a3ea15",
+      "bytes": 4863
+    },
+    {
+      "path": "tests/helpers.mjs",
+      "sha256": "9f2d18254a7ece49d7ef9728c57518f195eccda729759558bea602448f1a2bc2",
+      "bytes": 3742
+    },
+    {
+      "path": "vite.config.js",
+      "sha256": "99f0b361902368a4bcf6dfa47d89e42292e7f47926386a48eb687a3f99755856",
+      "bytes": 315
+    }
+  ]
+}
