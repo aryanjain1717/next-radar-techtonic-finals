@@ -86,6 +86,39 @@ TARGET POST-REPAIR SEMANTIC COVERAGE:
 
 No production Brand Memory changes have yet been made.
 
+### ISSUE-001C — Proposed Brand Memory JSON failed implementation-contract review
+
+STATUS: OPEN
+SEVERITY: HIGH
+
+The first proposed Brand Memory JSON additions were NOT approved for implementation.
+
+Reasons:
+
+1. The proposed JSON represented new knowledge as simple arrays such as
+   consumer_needs, usage_occasions, product_categories and functional_benefits,
+   while feature IDs, BRS dimensions, source IDs, provenance and governance
+   metadata existed only in the accompanying explanation.
+
+   It has not yet been proven that server/domain/dove-core.mjs consumes these
+   proposed keys or preserves the required feature-level provenance.
+
+2. DOVE_INDIA_OCCASION_002 ("hair-care format regimes and treatments") exceeded
+   the approved usage-occasion evidence boundary and is rejected.
+
+3. Proposed Dove "bodywash and body lotions" category evidence requires
+   source-specific revalidation before approval; portfolio-level HUL category
+   statements must not be converted into Dove-specific Brand Memory.
+
+4. "Care & Protect campaign" is inaccurate wording. The cited HUL source describes
+   Dove launching a Care & Protect range. Any future feature must preserve that
+   distinction.
+
+No data/brand_memory.json implementation has been approved.
+
+NEXT ACTION:
+Audit the exact data/brand_memory.json → dove-core.mjs loader contract before
+deciding whether the repair is data-only or requires a controlled loader extension.
 
 ## 1. CURRENT MASTER ARCHITECTURE
 
