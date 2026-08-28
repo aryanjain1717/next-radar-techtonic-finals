@@ -58,8 +58,15 @@ No Trend-level BRS aggregation may be invented.
 No Trend-level actionability may be invented.
 
 ---
+## Recovery Checkpoint
+
+Current baseline commit:
+86567eb13525e4ddc943915c4cdc5b4f3d2ffe90
+
 
 ## 3. CURRENT CONFIGURATION
+Current baseline commit:
+86567eb13525e4ddc943915c4cdc5b4f3d2ffe90
 
 RADAR_DOVE_SIMILARITY_THRESHOLD = 0.84
 
