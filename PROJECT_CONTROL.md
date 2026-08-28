@@ -216,6 +216,83 @@ Additional schema constraints now frozen:
 No production implementation is approved until actual loader call sites and
 runtime contract are verified against the current repository.
 
+### CHECKPOINT C6 — Governed Dove Brand Memory Repair
+
+STATUS: IMPLEMENTED / STRUCTURALLY VALIDATED
+DATE: 28 Aug 2026
+
+Current production Brand Memory:
+
+- Legacy features: 8
+- Governed Dove India features: 21
+- Total runtime features: 29
+
+Frozen BRS dimension contract verified directly from server/domain/constants.mjs:
+
+- audience_overlap = 12
+- consumer_need_overlap = 12
+- usage_occasion_context_fit = 7
+- product_category_adjacency = 10
+- functional_benefit_product_truth_fit = 10
+- cultural_territory_alignment = 10
+- brand_purpose_values_alignment = 8
+- brand_personality_tone_alignment = 6
+- distinctive_brand_asset_semiotic_fit = 5
+- current_strategic_priority_alignment = 7
+- market_geographic_relevance = 7
+- historical_activation_brand_permission = 6
+
+Total = 100.
+
+Actual feature-backed positive Brand Memory coverage:
+
+SUPPORTED = 75 / 100
+
+Supported dimensions:
+- audience_overlap
+- consumer_need_overlap
+- usage_occasion_context_fit
+- product_category_adjacency
+- functional_benefit_product_truth_fit
+- cultural_territory_alignment
+- brand_purpose_values_alignment
+- historical_activation_brand_permission
+
+INTENTIONALLY UNRESOLVED = 25 / 100
+
+No governed features exist for:
+- brand_personality_tone_alignment
+- distinctive_brand_asset_semiotic_fit
+- current_strategic_priority_alignment
+- market_geographic_relevance
+
+These dimensions remain UNKNOWN where unsupported.
+
+Validation:
+- full tests: 30 / 30 PASS
+- npm run check: PASS
+- npm run build: PASS
+- duplicate governed IDs: 0
+- malformed source URLs: 0
+- invalid evidence scopes: 0
+- governed features in excluded dimensions: 0
+- legacy 8-feature regression: PASS
+
+Previous AI Studio verification report incorrectly claimed:
+- different BRS weights;
+- brand_role_credibility dimension;
+- DOVE_INDIA_SEMIOTIC_001/002 features.
+
+Direct repository reconciliation proved all of those claims false.
+
+FROZEN BRS CONTRACT: PASS
+GOVERNED CONTENT BOUNDARY: PASS
+
+Do not reopen Brand Memory architecture/source mapping without a concrete downstream failure.
+
+NEXT:
+Live production RadarContext + Ask Radar integration validation.
+
 
 ## 1. CURRENT MASTER ARCHITECTURE
 
