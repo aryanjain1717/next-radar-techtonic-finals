@@ -41,6 +41,51 @@ NEXT ACTION:
 Run corrected evidence-constrained mapping before editing data/brand_memory.json.
 
 
+### ISSUE-001B — Second-Pass Evidence Mapping
+
+STATUS: REVIEWED AND ACCEPTED FOR CHANGE PLANNING
+DATE: 28 Aug 2026
+
+The second-pass source-to-memory audit applied:
+- source specificity;
+- no evidence amplification;
+- atomic feature formulation;
+- zero unsupported inference.
+
+Accepted implementation boundary:
+
+STRICTLY APPROVABLE WEIGHT: 75 / 100
+
+Approved dimensions for governed Brand Memory repair:
+- audience_overlap — 12% (existing legacy feature retained; no new audience claim approved)
+- consumer_need_overlap — 12%
+- usage_occasion_context_fit — 7%
+- product_category_adjacency — 10%
+- functional_benefit_product_truth_fit — 10%
+- cultural_territory_alignment — 10%
+- brand_purpose_values_alignment — 8%
+- historical_activation_brand_permission — 6%
+
+PARTIAL EVIDENCE — NOT APPROVED FOR BRS FEATURE CREATION:
+- current_strategic_priority_alignment — 7%
+- market_geographic_relevance — 7%
+
+UNSUPPORTED — MUST REMAIN UNKNOWN:
+- brand_personality_tone_alignment — 6%
+- distinctive_brand_asset_semiotic_fit — 5%
+
+Additional review constraints:
+- Do not create a new "mass-to-masstige target audience" feature.
+  Existing DOVE_LEGACY_AUDIENCE_001 remains the only audience feature for now.
+- Usage occasion must be restricted to explicitly supported bathing/in-shower context.
+  Do not create inferred daily/weekly routine-frequency features.
+- No partial or unsupported dimension may be made scoreable merely to increase coverage.
+
+TARGET POST-REPAIR SEMANTIC COVERAGE:
+75 / 100 maximum assessable BRS weight.
+
+No production Brand Memory changes have yet been made.
+
 
 ## 1. CURRENT MASTER ARCHITECTURE
 
