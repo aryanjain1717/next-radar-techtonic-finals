@@ -14,6 +14,33 @@ No implementation phase is considered complete until:
 6. the approved change is committed to GitHub.
 
 ---
+### ISSUE-001A — Source-to-Memory Mapping Overclaim
+
+STATUS: OPEN
+SEVERITY: HIGH
+
+The first source-to-Brand-Memory mapping proposed potential coverage of:
+- 89% strict supported weight
+- 95% supported + partial weight
+
+Human review rejected this mapping for implementation because several candidate
+features exceeded the specificity of their underlying sources.
+
+Examples identified:
+- portfolio-level HUL strategy represented as Dove-specific strategy;
+- unverified Dove target-audience wording;
+- unsupported daily/weekly usage frequency;
+- unverified geographic examples such as hard water;
+- campaign-derived tone represented as formal brand personality;
+- global/historical campaign chronology represented as India-specific precedent
+  without sufficient source-level confirmation.
+
+No Brand Memory feature from this mapping has been approved for implementation.
+
+NEXT ACTION:
+Run corrected evidence-constrained mapping before editing data/brand_memory.json.
+
+
 
 ## 1. CURRENT MASTER ARCHITECTURE
 
