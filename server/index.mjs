@@ -6,7 +6,7 @@ import { createGeminiProvider } from './gemini.mjs';
 import { runRadarPipeline, applyAuthoritativePrioritization, publicWorkspace } from './pipeline.mjs';
 import { jsonResponse } from './domain/utils.mjs';
 
-const PORT=Number(process.env.PORT||3001);const __dirname=path.dirname(fileURLToPath(import.meta.url));const staticDir=path.resolve(__dirname,'../dist-client');const workspaces=new Map();let providerPromise=null;const getProvider=()=>providerPromise??=(createGeminiProvider());
+const PORT=Number(process.env.PORT||3000);const __dirname=path.dirname(fileURLToPath(import.meta.url));const staticDir=path.resolve(__dirname,'../dist-client');const workspaces=new Map();let providerPromise=null;const getProvider=()=>providerPromise??=(createGeminiProvider());
 
 const server=http.createServer(async(req,res)=>{try{
   if(req.method==='GET'&&req.url==='/api/health')return jsonResponse(res,200,{ok:true,gemini_configured:Boolean(process.env.GEMINI_API_KEY),dove_similarity_threshold_configured:Boolean(process.env.RADAR_DOVE_SIMILARITY_THRESHOLD),final_choice:'A_FAIL_CLOSED_PRIORITISATION'});
@@ -18,8 +18,8 @@ const server=http.createServer(async(req,res)=>{try{
   if(req.url?.startsWith('/api/'))return jsonResponse(res,404,{error:'API route not found'});
   return serveStatic(req,res);
 }catch(e){console.error(e);return jsonResponse(res,500,{error:e.message||'Server error'});}});
-server.listen(PORT,()=>console.log(`NEXT Radar server listening on ${PORT}`));
+server.listen(PORT,'0.0.0.0',()=>console.log(`NEXT Radar server listening on http://0.0.0.0:${PORT}`));
 
 function requireWs(id){const ws=workspaces.get(id);if(!ws)throw new Error('Active Radar dataset not found on this server session');return ws;}
 async function readJson(req){let body='';for await(const chunk of req){body+=chunk;if(body.length>20_000_000)throw new Error('Request too large');}if(!body)return {};try{return JSON.parse(body);}catch{throw new Error('Invalid JSON request body');}}
-function serveStatic(req,res){if(!fs.existsSync(staticDir))return jsonResponse(res,200,{message:'NEXT Radar server is running. Build the client with npm run build or use npm run dev.'});let rel=decodeURIComponent((req.url||'/').split('?')[0]);if(rel==='/'||!path.extname(rel))rel='/index.html';const file=path.resolve(staticDir,'.'+rel);if(!file.startsWith(staticDir)||!fs.existsSync(file)||fs.statSync(file).isDirectory()){const fallback=path.join(staticDir,'index.html');if(fs.existsSync(fallback)){res.writeHead(200,{'content-type':'text/html'});return fs.createReadStream(fallback).pipe(res);}return jsonResponse(res,404,{error:'Not found'});}const ext=path.extname(file);const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.json':'application/json'}[ext]||'application/octet-stream';res.writeHead(200,{'content-type':mime});fs.createReadStream(file).pipe(res);}
+function serveStatic(req,res){if(!fs.existsSync(staticDir))return jsonResponse(res,200,{message:'NEXT Radar server is running. Build the client with npm run build or use npm run dev.'});let rel=decodeURIComponent((req.url||'/').split('?')[0]);if(rel==='/'||!path.extname(rel))rel='/index.html';const file=path.resolve(staticDir,'.'+rel);if(!file.startsWith(staticDir)||!fs.existsSync(file)||fs.statSync(file).isDirectory()){const fallback=path.join(staticDir,'index.html');if(fs.existsSync(fallback)){res.writeHead(200,{'content-type':'text/html'});return fs.createReadStream(fallback).pipe(res);}return jsonResponse(res,404,{error:'Not found'});}const ext=path.extname(file);const mime={'.html':'text/html','.js':'text/javascript','.mjs':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.json':'application/json','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.ico':'image/x-icon','.woff':'font/woff','.woff2':'font/woff2'}[ext]||'application/octet-stream';res.writeHead(200,{'content-type':mime});fs.createReadStream(file).pipe(res);}

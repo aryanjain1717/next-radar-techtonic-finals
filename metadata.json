@@ -1,0 +1,8 @@
+{
+  "name": "NEXT Radar · Dove Intelligence",
+  "description": "Dove intelligence platform for ingesting vendor social/event data, clustering trends, assessing BRS alignment, and evidence-grounded investigation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

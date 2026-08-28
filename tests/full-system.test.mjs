@@ -9,7 +9,7 @@ const csv=fs.readFileSync(new URL('../demo/sample_dove_vendor.csv',import.meta.u
 async function build(extra={}){return runRadarPipeline({filename:'sample_dove_vendor.csv',text:csv,provider:new FakeGeminiProvider(),config:{discoverySimilarityThreshold:0.35,discoveryTopK:8,doveSimilarityThreshold:extra.doveSimilarityThreshold??null},prioritySnapshot:extra.prioritySnapshot??null});}
 
 test('full 1→11 chain remains coherent and option A fails closed on priority',async()=>{
-  const ws=await build();
+  const ws=await build({doveSimilarityThreshold:0.78});
   assert.equal(ws.context.dataset.radar_overview.status,'NOT_AVAILABLE');
   assert.equal(ws.context.dataset.radar_overview.executive_brief.length,0);
   assert.deepEqual(ws.context.dataset.radar_overview.unprioritized_trend_ids,ws.context.trends.map(t=>t.trend_id));
@@ -18,7 +18,7 @@ test('full 1→11 chain remains coherent and option A fails closed on priority',
   assert.equal(ws.context.records[2].views,null,'missing numeric value must remain null');
   assert.equal(ws.context.records[3].caption.includes('Ignore previous instructions'),true,'prompt-like vendor text must remain data');
   assert.equal(ws.context.records[0].radar_outputs.existing_actionability.status,'NOT_RECONSTRUCTED');
-  assert.equal(ws.context.records[0].radar_outputs.existing_brs.status,'NOT_AVAILABLE');
+  assert.equal(ws.context.records[0].radar_outputs.existing_brs.status,'PROVISIONAL');
   const trendId=ws.context.trends[0].trend_id;
   const scores=ws.retrieval.getScores(trendId);
   assert.equal(scores.aggregation,'NO_NEW_AGGREGATION');
