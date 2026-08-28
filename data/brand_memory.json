@@ -7,7 +7,408 @@
   "Dove": {
     "territories": ["real beauty", "self-esteem", "representation", "care", "confidence"],
     "audience": "Broad beauty and personal-care consumers",
-    "guardrails": ["avoid reinforcing narrow beauty ideals", "preserve inclusive representation"]
+    "guardrails": ["avoid reinforcing narrow beauty ideals", "preserve inclusive representation"],
+    "governed_features": [
+      {
+        "feature_id": "DOVE_INDIA_NEED_001",
+        "dimension": "consumer_need_overlap",
+        "text": "skin protection together with moisturisation",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-001",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2020-21/beauty-personal-care.html",
+            "source_title": "HUL Beauty & Personal Care Performance Highlights FY2020-21",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove launched Care & Protect providing protection along with moisturisation.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_NEED_002",
+        "dimension": "consumer_need_overlap",
+        "text": "hair-fall concern",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-003",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2022-2023/beauty-and-personal-care.html",
+            "source_title": "HUL Performance Highlights FY2022-23 — Beauty and Personal Care",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove Hair Fall Therapy cited as an on-trend innovation responding to consumer hair-fall needs.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_NEED_003",
+        "dimension": "consumer_need_overlap",
+        "text": "in-shower skin concerns including acne, exfoliation and glow",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-005",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2024-2025/personal-care.html",
+            "source_title": "HUL Performance Highlights FY2024-25 — Personal Care",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove shower-serum range addresses skin concerns including acne, exfoliation and glow within the bathing experience.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_NEED_004",
+        "dimension": "consumer_need_overlap",
+        "text": "hair thinning and scalp-health concerns",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-006",
+            "source_url": "https://www.hul.co.in/files/integrated-annual-report-2024-25.pdf",
+            "source_title": "HUL Integrated Annual Report 2024-25",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove Scalp+Hair Therapy Density Boost Serum addresses consumer concerns around hair thinning and scalp health.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_NEED_005",
+        "dimension": "consumer_need_overlap",
+        "text": "scalp dryness and itchiness",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-006",
+            "source_url": "https://www.hul.co.in/files/integrated-annual-report-2024-25.pdf",
+            "source_title": "HUL Integrated Annual Report 2024-25",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL identifies dryness and itchiness among the core consumer scalp and hair concerns addressed by the range.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_OCCASION_001",
+        "dimension": "usage_occasion_context_fit",
+        "text": "bathing and in-shower experience",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-005",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2024-2025/personal-care.html",
+            "source_title": "HUL Performance Highlights FY2024-25 — Personal Care",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove shower-serum collection is positioned explicitly within the bathing experience.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_CATEGORY_001",
+        "dimension": "product_category_adjacency",
+        "text": "premium cleansing bars",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-004",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2023-2024/beauty-and-personal-care.html",
+            "source_title": "HUL Performance Highlights FY2023-24 — Beauty and Personal Care",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL cites Dove as the core vehicle for consumer upgrading from mass to premium cleansing bars.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_CATEGORY_002",
+        "dimension": "product_category_adjacency",
+        "text": "shower-serum range",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-005",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2024-2025/personal-care.html",
+            "source_title": "HUL Performance Highlights FY2024-25 — Personal Care",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove launched its first shower-serum range in India.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_CATEGORY_003",
+        "dimension": "product_category_adjacency",
+        "text": "Dove hair-care range launched in India",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-002",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2022-2023/consumers.html",
+            "source_title": "HUL Performance Highlights FY2022-23 — Consumers",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove hair care range launched in India in 2007 establishing permanent hair care category presence.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_CATEGORY_004",
+        "dimension": "product_category_adjacency",
+        "text": "Dove Hair Mask",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-004",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2023-2024/beauty-and-personal-care.html",
+            "source_title": "HUL Performance Highlights FY2023-24 — Beauty and Personal Care",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove Hair Mask cited as a specific innovation within emerging hair-care product formats.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_CATEGORY_005",
+        "dimension": "product_category_adjacency",
+        "text": "Dove Scalp+Hair Therapy and Density Boost Serum",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-006",
+            "source_url": "https://www.hul.co.in/files/integrated-annual-report-2024-25.pdf",
+            "source_title": "HUL Integrated Annual Report 2024-25",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove unveiled its Scalp + Hair Therapy range featuring the Density Boost Serum in India.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_BENEFIT_001",
+        "dimension": "functional_benefit_product_truth_fit",
+        "text": "protection together with moisturisation",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-001",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2020-21/beauty-personal-care.html",
+            "source_title": "HUL Beauty & Personal Care Performance Highlights FY2020-21",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Formulation truth providing dual benefit of hygiene/protection and moisturisation.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_BENEFIT_002",
+        "dimension": "functional_benefit_product_truth_fit",
+        "text": "Dove shower-serum range co-created with dermatologists and using pro-ceramides",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-005",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2024-2025/personal-care.html",
+            "source_title": "HUL Performance Highlights FY2024-25 — Personal Care",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL states the shower-serum collection was co-created with dermatologists and uses pro-ceramides.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_BENEFIT_003",
+        "dimension": "functional_benefit_product_truth_fit",
+        "text": "Dove Scalp+Hair Therapy formulation contains niacinamide and zinc-peptides",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-006",
+            "source_url": "https://www.hul.co.in/files/integrated-annual-report-2024-25.pdf",
+            "source_title": "HUL Integrated Annual Report 2024-25",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Product disclosure explicitly states the formulation contains niacinamide and zinc-peptides.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_BENEFIT_004",
+        "dimension": "functional_benefit_product_truth_fit",
+        "text": "science-backed scalp formulation with clinically proven results",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-006",
+            "source_url": "https://www.hul.co.in/files/integrated-annual-report-2024-25.pdf",
+            "source_title": "HUL Integrated Annual Report 2024-25",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL describes the Dove scalp and hair proposition as science-backed delivering clinically proven results.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_PURPOSE_001",
+        "dimension": "brand_purpose_values_alignment",
+        "text": "mission supporting women and young girls to build positive body confidence",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-007",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2022-2023/social.html",
+            "source_title": "HUL Performance Highlights FY2022-23 — Social",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL documents Dove mission supporting women and young girls to build positive body confidence.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_PURPOSE_002",
+        "dimension": "brand_purpose_values_alignment",
+        "text": "raising self-esteem in girls",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-007",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2022-2023/social.html",
+            "source_title": "HUL Performance Highlights FY2022-23 — Social",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL explicitly identifies Dove core purpose activity as raising self-esteem in girls.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_PURPOSE_003",
+        "dimension": "brand_purpose_values_alignment",
+        "text": "challenging societal beauty stereotypes through inclusive and positive beauty initiatives",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-007",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2022-2023/social.html",
+            "source_title": "HUL Performance Highlights FY2022-23 — Social",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "Dove purpose initiatives in India challenge societal beauty stereotypes under positive and inclusive beauty.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_ACTIVATION_001",
+        "dimension": "historical_activation_brand_permission",
+        "text": "Dove hair-care range launched in India in 2007",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-002",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2022-2023/consumers.html",
+            "source_title": "HUL Performance Highlights FY2022-23 — Consumers",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL historical milestones confirm Dove hair care range launched in India in 2007.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_ACTIVATION_002",
+        "dimension": "historical_activation_brand_permission",
+        "text": "Care & Protect product range launch",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-001",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2020-21/beauty-personal-care.html",
+            "source_title": "HUL Beauty & Personal Care Performance Highlights FY2020-21",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL reports Dove launched its Care & Protect range in FY2020-21 providing protection with moisturisation.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      },
+      {
+        "feature_id": "DOVE_INDIA_ACTIVATION_003",
+        "dimension": "historical_activation_brand_permission",
+        "text": "Stop The Beauty Test activation launched in India to celebrate beauty and unstereotype societal standards",
+        "review_status": "APPROVED",
+        "support_status": "VERIFIED",
+        "provenance": "OFFICIAL_HUL_INDIA",
+        "evidence": [
+          {
+            "source_id": "SRC-DOVE-IN-001",
+            "source_url": "https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2020-21/beauty-personal-care.html",
+            "source_title": "HUL Beauty & Personal Care Performance Highlights FY2020-21",
+            "published_date": null,
+            "retrieved_date": null,
+            "evidence_summary": "HUL documents Stop The Beauty Test launched in 2021 in India to celebrate beauty and challenge social stereotypes.",
+            "evidence_scope": "DOVE_INDIA_EXPLICIT"
+          }
+        ]
+      }
+    ]
   },
   "Rexona": {
     "territories": ["movement", "sport", "reliability", "confidence", "performance"],

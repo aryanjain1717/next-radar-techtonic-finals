@@ -54,43 +54,49 @@ const validGovernedFeature = {
 };
 
 test('1 & 2: legacy-only loader returns exactly the original 8 features with deep equality', () => {
-  const memory = loadLegacyDoveMemory();
-  assert.equal(memory.brand_id, 'DOVE_INDIA');
-  assert.equal(memory.features.length, 8);
+  const tempLegacy = createTempMemoryFile(baseLegacyDove);
+  try {
+    const memory = loadLegacyDoveMemory(tempLegacy.filePath);
+    assert.equal(memory.brand_id, 'DOVE_INDIA');
+    assert.equal(memory.features.length, 8);
 
-  const expectedIds = [
-    'DOVE_LEGACY_AUDIENCE_001',
-    'DOVE_LEGACY_TERRITORY_001',
-    'DOVE_LEGACY_TERRITORY_002',
-    'DOVE_LEGACY_TERRITORY_003',
-    'DOVE_LEGACY_TERRITORY_004',
-    'DOVE_LEGACY_TERRITORY_005',
-    'DOVE_LEGACY_NEGATIVE_001',
-    'DOVE_LEGACY_NEGATIVE_002'
-  ];
-  assert.deepEqual(memory.features.map(f => f.feature_id), expectedIds);
+    const expectedIds = [
+      'DOVE_LEGACY_AUDIENCE_001',
+      'DOVE_LEGACY_TERRITORY_001',
+      'DOVE_LEGACY_TERRITORY_002',
+      'DOVE_LEGACY_TERRITORY_003',
+      'DOVE_LEGACY_TERRITORY_004',
+      'DOVE_LEGACY_TERRITORY_005',
+      'DOVE_LEGACY_NEGATIVE_001',
+      'DOVE_LEGACY_NEGATIVE_002'
+    ];
+    assert.deepEqual(memory.features.map(f => f.feature_id), expectedIds);
 
-  const audience = memory.features[0];
-  assert.deepEqual(audience, {
-    feature_id: 'DOVE_LEGACY_AUDIENCE_001',
-    dimension: 'audience_overlap',
-    feature: 'Broad beauty and personal-care consumers',
-    support_status: 'VERIFIED',
-    review_status: 'APPROVED',
-    provenance: 'LEGACY_DEMO',
-    evidence: [{
-      source_id: 'LEGACY_PROTOTYPE',
-      source_url: null,
-      source_title: 'Supplied prototype data/brand_memory.json',
-      published_date: null,
-      retrieved_date: null,
-      evidence_summary: 'Legacy prototype profile value supplied by the user; not official-source provenance.',
-      evidence_scope: 'LEGACY_DEMO'
-    }]
-  });
+    const audience = memory.features[0];
+    assert.deepEqual(audience, {
+      feature_id: 'DOVE_LEGACY_AUDIENCE_001',
+      dimension: 'audience_overlap',
+      feature: 'Broad beauty and personal-care consumers',
+      support_status: 'VERIFIED',
+      review_status: 'APPROVED',
+      provenance: 'LEGACY_DEMO',
+      evidence: [{
+        source_id: 'LEGACY_PROTOTYPE',
+        source_url: null,
+        source_title: 'Supplied prototype data/brand_memory.json',
+        published_date: null,
+        retrieved_date: null,
+        evidence_summary: 'Legacy prototype profile value supplied by the user; not official-source provenance.',
+        evidence_scope: 'LEGACY_DEMO'
+      }]
+    });
+  } finally {
+    tempLegacy.cleanup();
+  }
 });
 
 test('3, 4, 5 & 18: valid governed feature appends as ninth feature, maps config text to runtime feature, preserves evidence without mutating original 8', () => {
+  const tempLegacy = createTempMemoryFile(baseLegacyDove);
   const doveWithGoverned = {
     ...baseLegacyDove,
     governed_features: [validGovernedFeature]
@@ -100,7 +106,7 @@ test('3, 4, 5 & 18: valid governed feature appends as ninth feature, maps config
     const memory = loadLegacyDoveMemory(temp.filePath);
     assert.equal(memory.features.length, 9);
 
-    const baseline = loadLegacyDoveMemory();
+    const baseline = loadLegacyDoveMemory(tempLegacy.filePath);
     assert.deepEqual(memory.features.slice(0, 8), baseline.features);
 
     const ninth = memory.features[8];
@@ -113,6 +119,7 @@ test('3, 4, 5 & 18: valid governed feature appends as ninth feature, maps config
     assert.deepEqual(ninth.evidence, validGovernedFeature.evidence);
     assert.equal(ninth.evidence[0].source_url, 'https://hul-performance-highlights.hul.co.in/performance-highlights-fy-2020-21/beauty-personal-care.html');
   } finally {
+    tempLegacy.cleanup();
     temp.cleanup();
   }
 });
@@ -290,4 +297,23 @@ test('19: validator uses existing frozen dimension definitions from constants', 
   assert.ok(definedDimensions.includes('consumer_need_overlap'));
   assert.ok(definedDimensions.includes('audience_overlap'));
   assert.ok(definedDimensions.includes('distinctive_brand_asset_semiotic_fit'));
+});
+
+test('20: production brand_memory.json contains 8 legacy features + 21 governed features (29 total)', () => {
+  const tempLegacy = createTempMemoryFile(baseLegacyDove);
+  try {
+    const legacyBaseline = loadLegacyDoveMemory(tempLegacy.filePath);
+    const prodMemory = loadLegacyDoveMemory();
+
+    assert.equal(prodMemory.features.length, 29);
+    assert.deepEqual(prodMemory.features.slice(0, 8), legacyBaseline.features);
+
+    const legacyFeatures = prodMemory.features.filter(f => f.feature_id.startsWith('DOVE_LEGACY_'));
+    const governedFeatures = prodMemory.features.filter(f => f.feature_id.startsWith('DOVE_INDIA_'));
+    assert.equal(legacyFeatures.length, 8);
+    assert.equal(governedFeatures.length, 21);
+    assert.deepEqual(prodMemory.features.slice(8), governedFeatures);
+  } finally {
+    tempLegacy.cleanup();
+  }
 });
