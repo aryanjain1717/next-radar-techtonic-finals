@@ -316,6 +316,68 @@ Expected additive tests:
 No BRS formula, matching, embedding, threshold, actionability,
 clustering, evidence or RadarContext redesign is permitted.
 
+### CHECKPOINT C3 — Governed Brand Memory Loader Implementation
+
+STATUS: PASS
+DATE: 28 Aug 2026
+
+Controlled governed-feature loader support has been implemented.
+
+Production file changed:
+- server/domain/dove-core.mjs
+
+Test file added in C2:
+- tests/dove-memory-loader.test.mjs
+
+Validation Pass 1:
+- npm test: 29 / 29 PASS
+
+Independent Validation Pass 2:
+- npm test: 29 / 29 PASS
+- npm run check: PASS
+- npm run build: PASS
+
+Legacy compatibility:
+- real legacy feature count: 8
+- legacy deep equality: PASS
+- legacy ordering: unchanged
+- legacy IDs: unchanged
+- legacy provenance/evidence: unchanged
+- DOVE_INDIA_* governed features in real data: 0
+
+Governed configuration contract:
+- configuration proposition field = text
+- loader maps text → runtime feature
+- evidence_scope for first repair = DOVE_INDIA_EXPLICIT
+- malformed governed features fail closed
+- duplicate/colliding IDs fail closed
+- invalid dimensions fail closed
+- unsupported governance statuses fail closed
+
+Frozen business logic changed:
+NONE
+
+Unchanged:
+- BRS dimensions
+- BRS weights
+- BRS formula
+- UNKNOWN handling
+- negative-fit penalty
+- BRS bands
+- cosine matching
+- semantic threshold = 0.84
+- embedding provider/model path
+- actionability
+- Option A prioritisation
+- clustering
+- hierarchy
+- evidence
+- RadarContext
+- Ask Radar
+
+NEXT CHECKPOINT:
+C4 — add audited Dove India governed Brand Memory data without modifying loader logic.
+
 NEXT CHECKPOINT:
 C2 — regression tests written before production implementation.
 ---
