@@ -7,6 +7,40 @@ export function loadLegacyDoveMemory(path=new URL('../../data/brand_memory.json'
   if(clean(dove.audience))features.push(feature('DOVE_LEGACY_AUDIENCE_001','audience_overlap',String(dove.audience)));
   for(const [i,t] of (Array.isArray(dove.territories)?dove.territories:[]).entries())if(clean(t))features.push(feature(`DOVE_LEGACY_TERRITORY_${String(i+1).padStart(3,'0')}`,'cultural_territory_alignment',String(t)));
   for(const [i,t] of (Array.isArray(dove.guardrails)?dove.guardrails:[]).entries())if(clean(t))features.push(feature(`DOVE_LEGACY_NEGATIVE_${String(i+1).padStart(3,'0')}`,'negative_fit',String(t)));
+
+  if(Array.isArray(dove.governed_features)){
+    const seenIds=new Set(features.map(f=>f.feature_id));
+    const permittedDimensions=new Set([...BRS_DIMENSIONS.map(([d])=>d),'negative_fit']);
+    for(const item of dove.governed_features){
+      if(!item||typeof item!=='object')throw new Error('[BrandMemoryLoader] Invalid governed feature: item must be an object');
+      const fid=typeof item.feature_id==='string'?item.feature_id.trim():'';
+      if(!fid)throw new Error('[BrandMemoryLoader] Invalid governed feature "": feature_id is required');
+      if(!fid.startsWith('DOVE_INDIA_'))throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": feature_id must start with DOVE_INDIA_`);
+      if(seenIds.has(fid))throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": duplicate or colliding feature_id`);
+      if(!permittedDimensions.has(item.dimension))throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": unknown or unpermitted dimension "${item.dimension}"`);
+      if(typeof item.text!=='string'||!item.text.trim())throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": text is required and cannot be empty or whitespace`);
+      if(item.review_status!=='APPROVED')throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": review_status must be APPROVED, got "${item.review_status}"`);
+      if(item.support_status!=='VERIFIED')throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": support_status must be VERIFIED, got "${item.support_status}"`);
+      if(!Array.isArray(item.evidence)||item.evidence.length===0)throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": evidence must be a non-empty array`);
+      for(const ev of item.evidence){
+        if(!ev||typeof ev!=='object')throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": evidence item must be an object`);
+        const sid=typeof ev.source_id==='string'?ev.source_id.trim():'';
+        if(!sid)throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": source_id is required`);
+        if(ev.evidence_scope!=='DOVE_INDIA_EXPLICIT')throw new Error(`[BrandMemoryLoader] Invalid governed feature "${fid}": evidence_scope must be DOVE_INDIA_EXPLICIT, got "${ev.evidence_scope}"`);
+      }
+      seenIds.add(fid);
+      features.push({
+        feature_id: fid,
+        dimension: item.dimension,
+        feature: item.text.trim(),
+        review_status: item.review_status,
+        support_status: item.support_status,
+        provenance: item.provenance,
+        evidence: structuredClone(item.evidence)
+      });
+    }
+  }
+
   return {brand_id:'DOVE_INDIA',brand_name:'Dove',market:'India',version:'legacy-demo-v1',memory_status:'LEGACY_DEMO',features};
 }
 function feature(feature_id,dimension,text){return {feature_id,dimension,feature:text,support_status:'VERIFIED',review_status:'APPROVED',provenance:'LEGACY_DEMO',evidence:[{source_id:'LEGACY_PROTOTYPE',source_url:null,source_title:'Supplied prototype data/brand_memory.json',published_date:null,retrieved_date:null,evidence_summary:'Legacy prototype profile value supplied by the user; not official-source provenance.',evidence_scope:'LEGACY_DEMO'}]};}
