@@ -177,6 +177,45 @@ NEXT ACTION:
 Freeze an explicit governed-feature schema and regression-test contract before editing
 production code.
 
+### ISSUE-001E — Controlled Loader Design Grounding Check
+
+STATUS: CONDITIONAL PASS
+DATE: 28 Aug 2026
+
+The controlled governed-feature loader design is architecturally acceptable:
+
+- preserve all 8 legacy features unchanged;
+- append validated Dove.governed_features;
+- retain existing loader API where possible;
+- do not alter semantic matching, embeddings, cosine similarity, BRS,
+  thresholds, actionability, clustering, evidence or RadarContext.
+
+However, final design approval is blocked pending one source-grounding verification.
+
+The design audit referenced call sites:
+- server/domain/orchestration.mjs
+- server/api/routes.mjs
+
+These paths were not part of the previously verified final package tree.
+They must be verified against the actual current repository rather than assumed.
+
+Additional schema constraints now frozen:
+
+1. Governed configuration uses exactly `text` as the proposition field.
+   Loader maps config `text` → runtime `feature`.
+
+2. Initial approved governed features may use only:
+   evidence_scope = DOVE_INDIA_EXPLICIT
+
+   Partial/global/portfolio evidence is not part of this first repair.
+
+3. Official source URLs must be preserved when known.
+   Nullable source_url remains allowed only where the underlying source genuinely
+   lacks a usable URL.
+
+No production implementation is approved until actual loader call sites and
+runtime contract are verified against the current repository.
+
 
 ## 1. CURRENT MASTER ARCHITECTURE
 
