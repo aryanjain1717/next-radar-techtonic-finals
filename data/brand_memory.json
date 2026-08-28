@@ -1,0 +1,22 @@
+{
+  "Axe": {
+    "territories": ["youth culture", "fragrance", "confidence", "self-expression", "music and entertainment", "playful irreverence"],
+    "audience": "Young consumers / young adults",
+    "guardrails": ["avoid forced trend participation", "preserve brand authenticity", "avoid unsupported product claims"]
+  },
+  "Dove": {
+    "territories": ["real beauty", "self-esteem", "representation", "care", "confidence"],
+    "audience": "Broad beauty and personal-care consumers",
+    "guardrails": ["avoid reinforcing narrow beauty ideals", "preserve inclusive representation"]
+  },
+  "Rexona": {
+    "territories": ["movement", "sport", "reliability", "confidence", "performance"],
+    "audience": "Active consumers",
+    "guardrails": ["avoid unsupported performance claims", "preserve movement-led positioning"]
+  },
+  "Knorr": {
+    "territories": ["food", "flavour", "convenience", "social cooking", "trending cuisines"],
+    "audience": "Households and younger cooking consumers",
+    "guardrails": ["food/claims compliance", "avoid culturally tone-deaf food commentary"]
+  }
+}

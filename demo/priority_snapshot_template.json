@@ -1,0 +1,15 @@
+{
+  "dataset_id": "DATASET_REPLACE_WITH_ACTIVE_DATASET_ID",
+  "references": [
+    {
+      "trend_id": "TREND_REPLACE_WITH_ACTUAL_TREND_ID",
+      "band": "REPLACE_WITH_AUTHORITATIVE_BAND",
+      "priority_rank": 1,
+      "raw_output": {
+        "source": "REPLACE_WITH_AUTHORITATIVE_SOURCE_OUTPUT"
+      },
+      "source_event_ids": [],
+      "source_record_ids": []
+    }
+  ]
+}
