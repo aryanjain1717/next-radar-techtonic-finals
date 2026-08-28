@@ -237,6 +237,87 @@ Vendor CSV / JSON
 
 Dove-only current product experience.
 
+
+### CHECKPOINT C1 — Governed Brand Memory Loader Design
+
+STATUS: PASS
+DATE: 28 Aug 2026
+
+Actual repository grounding verified.
+
+Confirmed existing files:
+- server/domain/dove-core.mjs
+- server/pipeline.mjs
+- server/index.mjs
+
+Confirmed nonexistent/hallucinated paths from prior audit:
+- server/domain/orchestration.mjs
+- server/api/routes.mjs
+
+Actual runtime chain:
+
+package.json
+→ server/index.mjs
+→ server/pipeline.mjs / runRadarPipeline
+→ enrichWithDoveCore()
+→ loadLegacyDoveMemory()
+→ semantic embeddings
+→ cosine qualification
+→ assessBRS()
+→ calculateBRS()
+
+Controlled extension design accepted:
+
+Existing legacy JSON fields remain unchanged:
+- audience
+- territories
+- guardrails
+
+Existing 8 DOVE_LEGACY_* runtime features must remain identical.
+
+New governed configuration contract:
+
+Dove.governed_features[]
+
+Each configuration item uses:
+- feature_id
+- dimension
+- text
+- review_status
+- support_status
+- provenance
+- evidence
+
+Configuration uses ONLY `text`.
+
+Loader converts:
+config.text → runtime.feature
+
+The runtime Brand Memory feature contract remains unchanged downstream.
+
+First repair restrictions:
+- evidence_scope = DOVE_INDIA_EXPLICIT only
+- official source URLs preserved when available
+- no current strategic priority features
+- no market/geographic features
+- no personality/tone features
+- no distinctive asset/semiotic features
+- no DOVE_INDIA_OCCASION_002
+- no unsupported body-lotion/bodywash feature
+- no "Care & Protect campaign" wording
+
+Expected production change surface:
+- server/domain/dove-core.mjs
+- data/brand_memory.json
+
+Expected additive tests:
+- tests/contracts.test.mjs
+
+No BRS formula, matching, embedding, threshold, actionability,
+clustering, evidence or RadarContext redesign is permitted.
+
+NEXT CHECKPOINT:
+C2 — regression tests written before production implementation.
 ---
 
 ## 2. FROZEN CORE
