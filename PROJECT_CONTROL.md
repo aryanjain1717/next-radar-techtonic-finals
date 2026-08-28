@@ -146,29 +146,41 @@ PASS
 Source provenance:
 PASS
 
+Semantic completeness: FAIL — 22%
 ---
 
 ## 7. CONFIRMED OPEN ISSUES
 
 ### ISSUE-001 — Dove Brand Memory coverage
 
-Current Brand Memory has only 8 usable governed features.
+C### ISSUE-001 — Dove Brand Memory coverage
 
-Currently represented mainly:
-- audience_overlap
-- cultural_territory_alignment
-- negative_fit
-
-The frozen BRS contains 12 dimensions.
-
-Therefore the BRS architecture is structurally valid but Brand Memory
-semantic coverage is currently incomplete.
-
-STATUS: OPEN
+STATUS: CONFIRMED FAIL
 SEVERITY: HIGH
-NEXT ACTION: 12-dimension evidence coverage audit.
 
-Do NOT solve this by fabricating Dove facts.
+Read-only semantic completeness audit completed 28 Aug 2026.
+
+Coverage:
+- Supported BRS weight: 22 / 100
+- Partially supported weight: 0 / 100
+- Unsupported weight: 78 / 100
+- Maximum currently assessable weight: 22%
+
+Currently supported positive dimensions:
+- audience_overlap — 12%
+- cultural_territory_alignment — 10%
+
+Negative-fit guardrails exist separately and do not add positive assessable weight.
+
+Conclusion:
+The BRS architecture is structurally valid but is NOT yet semantically complete enough
+for substantive production-style BRS interpretation.
+
+No Brand Memory facts may be fabricated to close this gap.
+
+NEXT ACTION:
+Create an India-specific, source-backed Dove Brand Memory source ledger using official
+HUL/Dove evidence. Review dimension mapping before modifying brand_memory.json.
 
 ### ISSUE-002 — Test provider vs production embedding divergence
 
