@@ -120,6 +120,64 @@ NEXT ACTION:
 Audit the exact data/brand_memory.json → dove-core.mjs loader contract before
 deciding whether the repair is data-only or requires a controlled loader extension.
 
+
+### ISSUE-001D — Brand Memory loader cannot consume governed dimensions
+
+STATUS: CONFIRMED
+SEVERITY: HIGH
+IMPLEMENTATION PATH: CONTROLLED LOADER EXTENSION
+
+Read-only loader-contract audit confirmed:
+
+Current data/brand_memory.json Dove schema contains only:
+- audience
+- territories
+- guardrails
+
+Current server/domain/dove-core.mjs loader consumes only those three fields.
+
+Proposed fields such as:
+- consumer_needs
+- usage_occasions
+- product_categories
+- functional_benefits
+- brand_purpose
+- historical_activations
+
+are currently IGNORED.
+
+An in-memory dry run proved that an added consumer_need value produced no semantic
+Brand Memory feature.
+
+Therefore a data-only repair is impossible.
+
+Required controlled production change:
+- server/domain/dove-core.mjs
+- data/brand_memory.json
+
+The change must be additive and preserve all 8 existing legacy features exactly.
+
+Frozen downstream logic remains unchanged:
+- 12 BRS dimensions and weights
+- semantic threshold = 0.84
+- embedding model/path
+- cosine similarity
+- 0–3 rating rubric
+- UNKNOWN handling
+- no renormalisation
+- negative penalty = 10 × severity
+- BRS bands
+- actionability
+- Option A prioritisation
+- clustering/hierarchy/evidence/RadarContext
+
+IMPLEMENTATION NOT YET APPROVED.
+
+NEXT ACTION:
+Freeze an explicit governed-feature schema and regression-test contract before editing
+production code.
+
+
 ## 1. CURRENT MASTER ARCHITECTURE
 
 Vendor CSV / JSON
